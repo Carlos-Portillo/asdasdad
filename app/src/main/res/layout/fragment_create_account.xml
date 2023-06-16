@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_mobile"
+    tools:context=".ui.ranking.RankingFragment">
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:layout_marginStart="@dimen/medium_gap"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:contentDescription="Back Button"
+        android:src="@drawable/baseline_keyboard_backspace_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_gap"
+        android:text="Regresar"
+        android:textSize="20dp"
+        style="@style/UbuntuFont"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="@+id/backButton"
+        app:layout_constraintBottom_toBottomOf="@+id/backButton"/>
+
+    <TextView
+        android:id="@+id/profileText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:textStyle="bold"
+        android:text="Registro"
+        android:textSize="40dp"
+        style="@style/UbuntuFont"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backButton"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/border_radius"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawablePadding="10dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:hint="Nombre"
+        style="@style/UbuntuFont"
+        android:textColorHint="@color/gray"
+        app:layout_constraintTop_toBottomOf="@+id/profileText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/border_radius"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="10dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        style="@style/UbuntuFont"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:hint="Correo electrónico"
+        android:textColorHint="@color/gray"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/border_radius"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:backgroundTint="@color/white"
+        style="@style/UbuntuFont"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:hint="Contraseña"
+        android:textColorHint="@color/gray"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/editTextPasswordConfirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_gap"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/border_radius"
+        android:padding="15dp"
+        android:drawableLeft="@drawable/baseline_lock_24"
+        android:drawablePadding="10dp"
+        android:backgroundTint="@color/white"
+        style="@style/UbuntuFont"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:hint="Confirmar contraseña"
+        android:textColorHint="@color/gray"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <CheckBox
+        android:id="@+id/myCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_gap"
+        android:text="Acepto los términos y condiciones"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordConfirmation"
+        app:layout_constraintStart_toStartOf="@+id/editTextPasswordConfirmation"/>
+
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_gap"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/border_radius"
+        android:text="Crear Cuenta"
+        android:textSize="18dp"
+        style="@style/UbuntuFont"
+        android:textAllCaps="false"
+        android:textColor="@color/main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myCheckbox" />
+
+    <TextView
+        android:id="@+id/textLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big_gap"
+        android:text="¿Ya posees una cuenta? "
+        android:textSize="16dp"
+        style="@style/UbuntuFont"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submitButton"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/logIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_gap"
+        android:text="Iniciar Sesión"
+        style="@style/UbuntuFont"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLogIn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

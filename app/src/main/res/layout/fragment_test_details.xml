@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name = "viewmodel"
+            type = "com.example.avanzotestsimulator.ui.home.viewmodel.HomeViewModel"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.home.TestDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.23"
+            android:background="@drawable/menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="17dp"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:contentDescription="Back Button"
+                android:src="@drawable/baseline_keyboard_backspace_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detalleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_gap"
+                android:text="Detalle"
+                android:textSize="20dp"
+                style="@style/UbuntuFont"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/backButton"
+                app:layout_constraintTop_toTopOf="@+id/backButton"
+                app:layout_constraintBottom_toBottomOf="@+id/backButton" />
+
+            <TextView
+                android:id="@+id/materiaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_gap"
+                android:text="@={viewmodel.name}"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                style="@style/UbuntuFont"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/backButton"
+                app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+            <TextView
+                android:id="@+id/puntosText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_gap"
+                android:text="Obtén 100 puntos"
+                android:textSize="15dp"
+                style="@style/UbuntuFont"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/backButton"
+                app:layout_constraintTop_toBottomOf="@+id/materiaText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line"
+            android:layout_width="60dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/small_gap"
+            android:background="@drawable/menu"
+            app:layout_constraintTop_toBottomOf="@+id/appBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/instruction1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginStart="@dimen/medium_gap"
+            android:text="Acerca de esta prueba"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            style="@style/UbuntuFont"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line" />
+
+        <ImageView
+            android:id="@+id/QuestionsImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/small_gap"
+            android:src="@drawable/questions_image"
+            app:layout_constraintStart_toStartOf="@+id/instruction1Text"
+            app:layout_constraintTop_toBottomOf="@+id/instruction1Text" />
+
+        <TextView
+            android:id="@+id/InstructionQuestionsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 preguntas"
+            android:layout_marginLeft="@dimen/small_gap"
+            style="@style/UbuntuFont"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@+id/QuestionsImage"
+            app:layout_constraintBottom_toTopOf="@+id/DetailsQuestionsText"
+            app:layout_constraintTop_toTopOf="@+id/QuestionsImage" />
+
+        <TextView
+            android:id="@+id/DetailsQuestionsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 puntos por respuesta correcta"
+            android:textSize="15dp"
+            style="@style/RobotoFont"
+            android:textColor="@color/gray"
+            app:layout_constraintStart_toStartOf="@+id/InstructionQuestionsText"
+            app:layout_constraintTop_toBottomOf="@+id/InstructionQuestionsText"
+            app:layout_constraintBottom_toBottomOf="@+id/QuestionsImage" />
+
+        <ImageView
+            android:id="@+id/MinutesImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/small_gap"
+            android:src="@drawable/minutes_image"
+            app:layout_constraintStart_toStartOf="@+id/instruction1Text"
+            app:layout_constraintTop_toBottomOf="@+id/QuestionsImage" />
+
+        <TextView
+            android:id="@+id/InstructionMinutesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 min"
+            android:layout_marginLeft="@dimen/small_gap"
+            style="@style/UbuntuFont"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@+id/MinutesImage"
+            app:layout_constraintBottom_toTopOf="@+id/DetailsMinutesext"
+            app:layout_constraintTop_toTopOf="@+id/MinutesImage" />
+
+        <TextView
+            android:id="@+id/DetailsMinutesext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duración total de la prueba"
+            android:textSize="15dp"
+            style="@style/RobotoFont"
+            android:textColor="@color/gray"
+            app:layout_constraintStart_toStartOf="@+id/InstructionMinutesText"
+            app:layout_constraintTop_toBottomOf="@+id/InstructionMinutesText"
+            app:layout_constraintBottom_toBottomOf="@+id/MinutesImage" />
+
+        <ImageView
+            android:id="@+id/StarsImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/small_gap"
+            android:src="@drawable/star_image"
+            app:layout_constraintStart_toStartOf="@+id/instruction1Text"
+            app:layout_constraintTop_toBottomOf="@+id/MinutesImage" />
+
+        <TextView
+            android:id="@+id/InstructionStarsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gana 10 estrellas"
+            android:layout_marginLeft="@dimen/small_gap"
+            style="@style/UbuntuFont"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@+id/StarsImage"
+            app:layout_constraintBottom_toTopOf="@+id/DetailsStarsText"
+            app:layout_constraintTop_toTopOf="@+id/StarsImage" />
+
+        <TextView
+            android:id="@+id/DetailsStarsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contesta todas las preguntas correctamente"
+            android:textSize="15dp"
+            style="@style/RobotoFont"
+            android:textColor="@color/gray"
+            app:layout_constraintStart_toStartOf="@+id/InstructionStarsText"
+            app:layout_constraintTop_toBottomOf="@+id/InstructionStarsText"
+            app:layout_constraintBottom_toBottomOf="@+id/StarsImage" />
+
+        <TextView
+            android:id="@+id/instruction2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:text="Lee las instrucciones cuidadosamente"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            style="@style/UbuntuFont"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/StarsImage"
+            app:layout_constraintTop_toBottomOf="@+id/StarsImage" />
+
+        <TextView
+            android:id="@+id/instruction2.1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_gap"
+            android:text="1 punto otorgado por una respuesta correcta"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/gray"
+            app:layout_constraintStart_toStartOf="@+id/instruction2Text"
+            app:layout_constraintTop_toBottomOf="@+id/instruction2Text" />
+
+        <TextView
+            android:id="@+id/instruction2.2Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_gap"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/small_gap"
+            android:text="Toque en las opciones para seleccionar la respuesta correcta"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            style="@style/RobotoFont"
+            android:textColor="@color/gray"
+            app:layout_constraintStart_toStartOf="@+id/instruction2.1Text"
+            app:layout_constraintTop_toBottomOf="@+id/instruction2.1Text" />
+
+        <TextView
+            android:id="@+id/instruction2.3Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_gap"
+            android:layout_marginEnd="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/small_gap"
+            android:text="Haga clic en Terminar si está seguro de que desea completar todos los cuestionarios"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            style="@style/RobotoFont"
+            android:textColor="@color/gray"
+            app:layout_constraintStart_toStartOf="@+id/instruction2.2Text"
+            app:layout_constraintTop_toBottomOf="@+id/instruction2.2Text" />
+
+        <Button
+            android:id="@+id/TestButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/button_background"
+            android:text="Realizar Prueba"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            style="@style/UbuntuFont"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/instruction2.3Text" />
+
+        <TextView
+            android:id="@+id/TrainingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_gap"
+            android:text="o Practicar"
+            android:layout_marginLeft="@dimen/small_gap"
+            style="@style/UbuntuFont"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:textSize="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TestButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

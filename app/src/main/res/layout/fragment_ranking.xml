@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name = "viewmodel"
+            type = "com.example.avanzotestsimulator.ui.ranking.viewmodel.RankingViewModel"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.ranking.RankingFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.102"
+            android:background="@drawable/menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginStart="17dp"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:contentDescription="Back Button"
+                android:src="@drawable/baseline_keyboard_backspace_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_gap"
+                android:text="Ranking"
+                android:textSize="20dp"
+                style="@style/UbuntuFont"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/backButton"
+                app:layout_constraintTop_toTopOf="@+id/backButton"
+                app:layout_constraintBottom_toBottomOf="@+id/backButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/line"
+            android:layout_width="60dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="@dimen/small_gap"
+            android:background="@drawable/menu"
+            app:layout_constraintTop_toBottomOf="@+id/appBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Recycler_view"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/small_gap"
+            android:layout_marginBottom="56dp"
+            android:layout_height="0dp"
+            app:layout_constraintBaseline_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
